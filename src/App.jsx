@@ -1,4 +1,5 @@
 import Footer from "./components/Footer";
+import FormularioTarea from "./components/FormularioTarea";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -6,7 +7,10 @@ function App() {
     <>
       <Navbar></Navbar>
       <main className="container my-3">
-        <h1>hola mundo</h1>
+        <h1 className="text-center">Administrar Tareas</h1>
+        <div>
+          <FormularioTarea></FormularioTarea>
+        </div>
       </main>
       <Footer></Footer>
     </>
