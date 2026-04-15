@@ -19,6 +19,12 @@ const handleSubmit = (e)=>{
   setTarea('')
 }
 
+const borrarTarea = (nombreTarea) =>{
+  const arrayFiltrado = arrayTareas.filter((itemTarea)=> itemTarea !== nombreTarea)
+  // actualizar el state
+  setArrayTareas(arrayFiltrado)
+}
+
   return (
     <section>
       <form onSubmit={handleSubmit}>
@@ -34,7 +40,7 @@ const handleSubmit = (e)=>{
           <button className="btn btn-primary">Enviar</button>
         </div>
       </form>
-      <ListaTarea arrayTareasProps={arrayTareas}></ListaTarea>
+      <ListaTarea arrayTareasProps={arrayTareas} borrarTareaProps={borrarTarea}></ListaTarea>
     </section>
   );
 };
