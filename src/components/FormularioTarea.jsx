@@ -7,8 +7,16 @@ const [tarea, setTarea] = useState('')
 
 const handleSubmit = (e)=>{
   e.preventDefault()
+  //validamos la tarea
+  const tareaBuscada = arrayTareas.find((itemTarea)=> itemTarea.toLowerCase() === tarea.toLowerCase().trim() )
+  console.log(tareaBuscada)
+  if(tareaBuscada){
+    return alert('La tarea ya existe')
+  }
   //agregar la "tarea" dentro del arrayTareas
-  setArrayTareas([...arrayTareas, tarea])
+  setArrayTareas([...arrayTareas, tarea.trim()])
+  //limpiar el input
+  setTarea('')
 }
 
   return (
