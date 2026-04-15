@@ -1,9 +1,11 @@
 import ItemTarea from "./ItemTarea";
 
-const ListaTarea = () => {
+const ListaTarea = ({arrayTareasProps}) => {
   return (
     <ul className="list-group">
-      <ItemTarea></ItemTarea>
+      {
+        arrayTareasProps.map(()=> <ItemTarea></ItemTarea> )
+      }
     </ul>
   );
 };

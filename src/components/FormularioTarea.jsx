@@ -34,7 +34,7 @@ const handleSubmit = (e)=>{
           <button className="btn btn-primary">Enviar</button>
         </div>
       </form>
-      <ListaTarea></ListaTarea>
+      <ListaTarea arrayTareasProps={arrayTareas}></ListaTarea>
     </section>
   );
 };
