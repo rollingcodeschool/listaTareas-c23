@@ -4,7 +4,7 @@ const ListaTarea = ({arrayTareasProps}) => {
   return (
     <ul className="list-group">
       {
-        arrayTareasProps.map(()=> <ItemTarea></ItemTarea> )
+        arrayTareasProps.map((textoTarea, indice)=> <ItemTarea key={indice} textoTareaProps={textoTarea}></ItemTarea> )
       }
     </ul>
   );
