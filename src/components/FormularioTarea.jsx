@@ -1,15 +1,27 @@
+import { useState } from "react";
 import ListaTarea from "./ListaTarea";
 
 const FormularioTarea = () => {
+const [arrayTareas, setArrayTareas] = useState([])
+const [tarea, setTarea] = useState('')
+
+const handleSubmit = (e)=>{
+  e.preventDefault()
+  //agregar la "tarea" dentro del arrayTareas
+  setArrayTareas([...arrayTareas, tarea])
+}
+
   return (
     <section>
-      <form>
-        <div class="mb-3 d-flex ">
+      <form onSubmit={handleSubmit}>
+        <div className="mb-3 d-flex ">
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="inputTarea"
             placeholder="Ingresa una tarea"
+            onChange={(e)=> setTarea(e.target.value) }
+            value={tarea}
           />
           <button className="btn btn-primary">Enviar</button>
         </div>
