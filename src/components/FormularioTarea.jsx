@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ListaTarea from "./ListaTarea";
 
 const FormularioTarea = () => {
-const [arrayTareas, setArrayTareas] = useState([])
+const tareasLocalStorage =  JSON.parse(localStorage.getItem('arrayTareasKey')) || []
+const [arrayTareas, setArrayTareas] = useState(tareasLocalStorage)
 const [tarea, setTarea] = useState('')
+// sintaxis del useEffect solo en montaje
+// useEffect(()=>{
+//   console.log('desde el useEffect')
+// },[])
+
+useEffect(()=>{
+  console.log('desde el useEffect')
+  localStorage.setItem('arrayTareasKey', JSON.stringify(arrayTareas))
+},[arrayTareas])
 
 const handleSubmit = (e)=>{
   e.preventDefault()
